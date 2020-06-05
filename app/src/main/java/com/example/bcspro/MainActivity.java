@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //setFontToActionBar();
+        setFontToActionBar();
         setNavigation();
         final NavController navController= Navigation.findNavController(this,R.id.my_nav_host_fragment);
         // NavigationUI.setupActionBarWithNavController(this,Navigation.findNavController(this,R.id.my_nav_host_fragment));
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setFontToActionBar() {
-        TextView tv = new TextView(getApplicationContext());
+        TextView tv = new TextView(MainActivity.this);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT);
         tv.setLayoutParams(lp);
         tv.setText("BCS Pro");
@@ -65,42 +65,16 @@ public class MainActivity extends AppCompatActivity {
         tv.setTypeface(tf);
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(tv);
-        setFontToActionBar();
+
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d("method","onPause");
-    }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("method","onRestart");
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("method","Resume");
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("method","onStart");
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d("method","Destroy");
-    }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d("method","stop");
-    }
+
+
+
+
 }

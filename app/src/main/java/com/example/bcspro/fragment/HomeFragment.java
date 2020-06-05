@@ -8,12 +8,17 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bcspro.R;
+import com.example.bcspro.adapter.FeatureAdapter;
+import com.example.bcspro.model.Feature;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
-
+    ArrayList<Feature> featuresList;
     RecyclerView feature_container;
 
     @Override
@@ -23,8 +28,34 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.navigation_home_fragment,container,false);
+        View view= inflater.inflate(R.layout.navigation_home_fragment,container,false);
+        feature_container=view.findViewById(R.id.item_container);
 
+        initView(view);
+        setUpAdapter();
+
+
+        return view;
+
+    }
+
+    private void setUpAdapter() {
+
+        feature_container.setHasFixedSize(true);
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(getActivity(),3);
+        feature_container.setLayoutManager(gridLayoutManager);
+        FeatureAdapter adapter=new FeatureAdapter(getActivity(),featuresList);
+        feature_container.setAdapter(adapter);
+    }
+
+    private void initView(View view) {
+
+        featuresList=new ArrayList<>();
+        featuresList.add(new Feature(R.drawable.algorithm,"Question"));
+        featuresList.add(new Feature(R.drawable.bonfire,"Listed Question"));
+        featuresList.add(new Feature(R.drawable.coffee,"Syllabus"));
+        featuresList.add(new Feature(R.drawable.security,"Study"));
+        featuresList.add(new Feature(R.drawable.seo,"Home"));
     }
 
     @Override
