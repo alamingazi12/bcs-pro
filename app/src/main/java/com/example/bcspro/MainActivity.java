@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()){
-
-
                     case R.id.home:
                         navController.navigate(R.id.homefragment);
                         break;

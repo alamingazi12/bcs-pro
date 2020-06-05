@@ -32,7 +32,7 @@ public class FragmentProfile extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
+       // final NavController navController = Navigation.findNavController(getActivity(), R.id.my_nav_host_fragment);
 
         //Button button = view.findViewById(R.id.button_frag1);
 
