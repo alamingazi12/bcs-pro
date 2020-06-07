@@ -4,7 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     ArrayList<Feature> featuresList;
     RecyclerView feature_container;
+    RelativeLayout layout_exam;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +32,13 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view= inflater.inflate(R.layout.navigation_home_fragment,container,false);
         feature_container=view.findViewById(R.id.item_container);
+        layout_exam=view.findViewById(R.id.layout_exam);
+        layout_exam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"Layout Clicked",Toast.LENGTH_LONG).show();
+            }
+        });
 
         initView(view);
         setUpAdapter();

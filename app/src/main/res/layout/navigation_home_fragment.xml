@@ -25,17 +25,19 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:background="@drawable/layout_style"
-                android:layout_marginTop="20dp"
+                android:id="@+id/layout_exam"
                 android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_margin="15dp"
-                android:layout_height="60dp">
+                android:layout_marginTop="20dp"
+                android:background="@drawable/layout_style">
+
                 <ImageView
-                    android:layout_marginStart="20dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/algorithms"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"/>
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/algorithms" />
 
             </RelativeLayout>
 
